@@ -1,0 +1,22 @@
+# fly.toml app configuration file generated for meetrapp on 2023-06-13T20:45:17-04:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "meetrapp"
+primary_region = "yyz"
+
+[build]
+  image = "spark035/datingapp:latest"
+
+[env]
+  ASPNETCORE_URLS="http://+:8080"
+  CloudinarySettings__CloudName="dnarzhudg"
+  CloudinarySettings__ApiKey="316866275965893"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
